@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+
+   
+}
+
+
+/* Estilo da página */
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+  color:#d6d7d8b2; /* cor do texto frontal  */
+  background-repeat: no-repeat;
+  background-image: url("../images/Projeto.png");
+  background-color: #000000;
+}
+
+header {  
+  display: top;  
+  background-color: rgb(0, 0, 0);
+  height: 56px;
+  font-size: 16pt;
+  
+    
+}
+
+.linkedin {
+    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    right: 0; 
+    width: 100px; 
+    height: auto;
+
+
+}
+
+.linkedin :hover{
+  transition: 0.75s;
+  color: rgb(156, 20, 20);
+}
+
+.git{
+    margin-top: 20px;
+    position: absolute;
+    top: 2px;
+    right: 0; 
+    gap: 10px;
+    margin-left: 10px;
+    width: 50px; 
+    height: auto;
+   
+}
+
+.git :hover{
+  transition: 0.75s;
+  color: rgb(156, 20, 20);
+}
+
+
+.git svg {
+  width: 20px;
+}
+
+.email svg {
+  width: 20px;
+}
+
+.linkedin svg {
+  width: 20px;
+}
+
+
+.navegaçao {
+    
+    /* justify-content: flex-start; */
+    list-style: none; 
+    
+    
+
+}
+.textodocabeçalho {  
+    display: flex; /* Define um layout flex */
+    padding: 18px;
+    gap:10px;
+    font-size: 8pt;
+    cursor: pointer;
+     
+    
+}
+.textodocabeçalho :hover{
+  transition: 0.75s;
+  color: rgb(156, 20, 20);
+  
+}
+
+
+.email{
+    margin-top: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px; 
+    gap: 10px;
+    margin-right: 100px;
+    width: 50px; 
+    height: auto;
+
+}
+
+.email :hover{
+  transition: 0.75s;
+  color: rgb(156, 20, 20);
+}
+
+
+.navegaçao a {
+    margin-top: 20px;
+    color:#d6d7d8b2;
+    text-decoration: none;
+    font-weight: bold;
+    height: 30px;
+    
+    
+    
+} 
+
+
+.caixa2 {
+    margin-inline: 100px;
+    display:flex;
+    justify-content: center;     
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    
+    
+}
+.section2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.intro h1 {
+    font-size: 50pt;
+    margin-top: 30px;
+}
+
+.intro p {
+  font-size: 30px;
+  margin: 1rem 0;
+}
+
+
+.intro span {
+  color:#ff5757;
+
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    color:#d6d7d8b2;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 50px;
+    
+    
+}
+
+.buttons :hover{
+  transition: 0.75s;
+  color: rgb(156, 20, 20);
+}
+
+
+/* Rodapé  */
+
+.social-media a {
+    font-size: 50px;
+    margin: 5 50px;
+    color:#d6d7d8b2;
+    text-decoration: none;    
+}
+
+.social-media a:hover {
+    color:#d6d7d8b2;
+}
+
+.titulo {
+  color:#ffffffb2;
+  margin-top: 90vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+   
+ }
+.titulo span{
+  color:#ff5757;
+}
+
+.container-card {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    /* margin-top: 10vh; */
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    
+    
+    
+}
+
+.card {
+    background: #191c29;
+    width: 240px;
+    height: 320px;
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 20pt;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    
+
+  }
+  .card span{
+    font-size: 0.9pt;
+     
+  }
+ 
+  .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  .meu-projeto {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    /* margin-top: 10vh; */
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    
+    
+    
+}
+
+.card2 {
+    background: #191c29;
+    width: 240px;
+    height: 320px;
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 20pt;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    
+
+  }
+  .card2 span{
+    font-size: 0.9pt;
+     
+  }
+ 
+  .card2:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+  .card2::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card2::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  footer {
+    background-color: #000000; /* Fundo escuro */
+    color:#d6d7d8b2; /* Texto claro */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+    font-family: 'Arial', sans-serif; /* Estilo da fonte */
+    font-size: 14pt; /* Tamanho do texto */
+    border-top: 2px solid #34495e; /* Linha no topo do rodapé */
+  }
+
+  footer p {
+    height: 30px;
+    margin: 0; /* Remove espaçamento extra em parágrafos */
+  }
+  
+  footer a img {
+    width: 24px; /* Ajuste o tamanho dos ícones */
+    height: 24px;
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    transition: transform 0.3s; /* Efeito de animação */
+  }
+
+
+  
