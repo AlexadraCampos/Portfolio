@@ -13,29 +13,136 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-
+    
    
 }
 
 
 /* Estilo da página */
 body {
-  margin: 0;
   font:normal 75% Arial, Helvetica, sans-serif;
   color:#d6d7d8b2; /* cor do texto frontal  */
-  background-repeat: no-repeat;
-  background-image: url("../images/Projeto.png");
-  background-color: #000000;
 }
 
-header {  
-  display: top;  
-  background-color: rgb(0, 0, 0);
-  height: 56px;
-  font-size: 16pt;
-  
-    
+/* Fundo animado */
+.fundo-site {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(0, #000000, #2c2931);
+  overflow: hidden;
 }
+
+/* Container de estrelas */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+	background: transparent;
+}
+
+/* Primeira camada de estrelas */
+.stars::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow: 
+      50vw 30vh white,
+      10vw 90vh white,
+      80vw 20vh white,
+      30vw 40vh white,
+      25vw 60vh white,
+      20vw 50vh white,
+      15vw 70vh white,
+      32vw 80vh white,
+      40vw 90vh white,
+      60vw 30vh white,
+      70vw 40vh white,
+      85vw 50vh white,
+      90vw 60vh white,
+      95vw 70vh white,
+      98vw 80vh white;
+  animation: starsOne 20s linear infinite;
+}
+
+/* Segunda camada de estrelas */
+.stars::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  box-shadow: 
+      45vw 35vh white,
+      15vw 85vh white,
+      75vw 25vh white,
+      35vw 45vh white,
+      20vw 65vh white,
+      25vw 55vh white,
+      10vw 75vh white,
+      37vw 85vh white,
+      45vw 95vh white,
+      65vw 35vh white,
+      75vw 45vh white,
+      80vw 55vh white,
+      95vw 65vh white,
+      90vw 75vh white,
+      93vw 85vh white;
+  animation: starsTwo 30s linear infinite;
+}
+
+/* Animações das estrelas */
+@keyframes starsOne {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(100vh);
+  }
+}
+
+@keyframes starsTwo {
+  0% {
+      transform: translateY(-100vh);
+  }
+  100% {
+      transform: translateY(100vh);
+  }
+}
+
+
+.background-container { 
+  position: relative;
+  color: #d6d7d8b2; /* Cor do texto */ 
+  height: 100vh;  /* Tamanho da altura */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/Projeto.png");
+  background-repeat: no-repeat;
+  background-size: 1920px 420px;
+  z-index: 1; /* A imagem está acima do fundo */
+  }
+
+
+.nav-link a {
+  color:#d6d7d8b2;
+  text-decoration: none;
+ 
+}
+
+.nav-link a:hover {
+  color: rgb(150, 19, 19); /* Cor no hover */
+} 
+
+
 
 .linkedin {
     margin-top: 20px;
@@ -48,10 +155,7 @@ header {
 
 }
 
-.linkedin :hover{
-  transition: 0.75s;
-  color: rgb(156, 20, 20);
-}
+
 
 .git{
     margin-top: 20px;
@@ -65,11 +169,6 @@ header {
    
 }
 
-.git :hover{
-  transition: 0.75s;
-  color: rgb(156, 20, 20);
-}
-
 
 .git svg {
   width: 20px;
@@ -81,18 +180,9 @@ header {
 
 .linkedin svg {
   width: 20px;
-}
+} 
 
-
-.navegaçao {
-    
-    /* justify-content: flex-start; */
-    list-style: none; 
-    
-    
-
-}
-.textodocabeçalho {  
+.navegaçao {  
     display: flex; /* Define um layout flex */
     padding: 18px;
     gap:10px;
@@ -101,12 +191,6 @@ header {
      
     
 }
-.textodocabeçalho :hover{
-  transition: 0.75s;
-  color: rgb(156, 20, 20);
-  
-}
-
 
 .email{
     margin-top: 20px;
@@ -118,57 +202,72 @@ header {
     width: 50px; 
     height: auto;
 
-}
-
-.email :hover{
-  transition: 0.75s;
-  color: rgb(156, 20, 20);
-}
-
-
-.navegaçao a {
-    margin-top: 20px;
-    color:#d6d7d8b2;
-    text-decoration: none;
-    font-weight: bold;
-    height: 30px;
-    
-    
-    
 } 
 
 
-.caixa2 {
-    margin-inline: 100px;
-    display:flex;
-    justify-content: center;     
-    align-items: center;
-    text-align: center;
-    height: 50vh;
-    
-    
-}
-.section2{
+.home-nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  padding: 1rem;  
+  background-color: rgb(0, 0, 0);
+  height: 56px;
+  list-style: none;
+
+}
+
+.home-nav h1 a {
+    
+    color:#d6d7d8b2;
+    text-decoration: none;
+     
+             
+} 
+.home-nav h1  :hover{
+  transition: 0.75s;
+  color: rgb(156, 20, 20);
+  
 }
 
 
-.intro h1 {
-    font-size: 50pt;
-    margin-top: 30px;
+.home {
+    margin-inline: 100px;
+    display:flex; 
+    justify-content: center; 
+    text-align: center;
+    align-items: center;
+    height: 100vh; 
+    padding: 0; 
+    background-size: cover;
+    white-space: nowrap;
+    flex-flow: row nowrap;
+    
+    
+    
+  
+    
+    
 }
 
-.intro p {
-  font-size: 30px;
+.home h1  { 
+  justify-content: center;
+  font-size: 40pt;
+  margin-top: -260px;
+  
+    
+
+}
+
+.home h2 {
   margin: 1rem 0;
+  font-size: 16pt;
+  
+
 }
 
 
-.intro span {
-  color:#ff5757;
+.home span {
+  color:#e05e5e;
 
 }
 
@@ -177,58 +276,18 @@ header {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     color:#d6d7d8b2;
+    font-size: 14pt;
     background-color: rgb(0, 0, 0);
     text-decoration: none;
     border-radius: 50px;
-    
-    
 }
+     
 
 .buttons :hover{
   transition: 0.75s;
   color: rgb(156, 20, 20);
 }
 
-
-/* Rodapé  */
-
-.social-media a {
-    font-size: 50px;
-    margin: 5 50px;
-    color:#d6d7d8b2;
-    text-decoration: none;    
-}
-
-.social-media a:hover {
-    color:#d6d7d8b2;
-}
-
-.titulo {
-  color:#ffffffb2;
-  margin-top: 90vh;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  margin-bottom: 30px;
-  font-size: 16px;
-   
- }
-.titulo span{
-  color:#ff5757;
-}
-
-.container-card {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    /* margin-top: 10vh; */
-    flex-flow: row nowrap;
-    justify-content: center;
-    
-    
-    
-    
-}
 
 .card {
     background: #191c29;
@@ -247,7 +306,7 @@ header {
     font-family: cursive;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
-    
+     
 
   }
   .card span{
@@ -310,20 +369,38 @@ header {
     animation: spin 2.5s linear infinite;
   }
 
-  .meu-projeto {
+  .divisao1 {
     display: flex;
-    gap: 40px;
-    justify-content: center;
-    /* margin-top: 10vh; */
-    flex-flow: row nowrap;
-    justify-content: center;
+    flex-flow: row nowrap; /* Mantém os itens em linha */
+    gap: 40px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center; /* Centraliza na vertical */
+    height: 100vh; /* Faz o contêiner ocupar toda a altura da página */
+    margin: 0; /* Remove qualquer margem que possa atrapalhar */
+    flex-flow: row;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50px, -40px);
     
-    
-    
-    
+       
 }
 
-.card2 {
+.texto-card1 {
+  color: #800000;
+  display: flex;
+  height: 500px;
+  transform: translate(500px, 40px);
+  margin: 0;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.texto-card1 h2 span {
+  color: #e05e5e;
+}
+
+
+.card1 {
     background: #191c29;
     width: 240px;
     height: 320px;
@@ -343,16 +420,16 @@ header {
     
 
   }
-  .card2 span{
+  .card1 span{
     font-size: 0.9pt;
      
   }
  
-  .card2:hover {
+  .card1:hover {
     color: rgb(88 199 250 / 100%);
     transition: color 1s;
   }
-  .card:hover:before, .card:hover:after {
+  .card1:hover:before, .card1:hover:after {
     animation: none;
     opacity: 0;
   }
@@ -368,7 +445,7 @@ header {
     --card-width: calc(var(--card-height) / 1.5);
   }
 
-  .card2::before {
+  .card1::before {
     content: "";
     width: 104%;
     height: 102%;
@@ -383,7 +460,7 @@ header {
       animation: spin 2.5s linear infinite;
   }
   
-  .card2::after {
+  .card1::after {
     position: absolute;
     content: "";
     top: calc(var(--card-height) / 6);
@@ -402,6 +479,120 @@ header {
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
   }
+
+    /* segunda divisão do site */
+  .divisao2 {
+    display: flex;
+    flex-flow: row nowrap; /* Mantém os itens em linha */
+    gap: 40px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center; /* Centraliza na vertical */
+    height: 100vh; /* Faz o contêiner ocupar toda a altura da página */
+    margin: 0; /* Remove qualquer margem que possa atrapalhar */
+    flex-flow: row;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50px, -40px);
+    
+       
+}
+
+.texto-card2 {
+  color: #800000;
+  display: flex;
+  height: 500px;
+  transform: translate(500px, 40px);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.texto-card2 h2 span {
+  color: #e05e5e;
+}
+
+.card2 {
+  background: #191c29;
+  width: 240px;
+  height: 320px;
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 20pt;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  
+
+}
+.card2 span{
+  font-size: 0.9pt;
+   
+}
+
+.card2:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+.card2:hover:before, .card2:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.card2::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card2::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+
+
+/* rodape */
 
   footer {
     background-color: #000000; /* Fundo escuro */
@@ -424,6 +615,5 @@ header {
     margin: 0 10px; /* Espaçamento entre os ícones */
     transition: transform 0.3s; /* Efeito de animação */
   }
-
 
   
