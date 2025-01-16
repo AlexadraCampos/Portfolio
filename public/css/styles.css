@@ -20,7 +20,7 @@
 
 /* Estilo da página */
 body {
-  font:normal 75% Arial, Helvetica, sans-serif;
+font-family: Georgia, serif;
   color:#d6d7d8b2; /* cor do texto frontal  */
 }
 
@@ -32,9 +32,54 @@ body {
   width: 100%;
   height: 100vh;
   z-index: -1;
-  background: linear-gradient(0, #000000, #2c2931);
+  background: linear-gradient(0, #181924, #000000);
   overflow: hidden;
 }
+
+/* Animação das skills */
+
+#img_skills {
+  width: 400px;
+  box-shadow: 0px 0px 4px black;
+  padding: 10px;
+  border-radius: 15px;
+  position: absolute; /* Garante posicionamento relativo à tela */
+  top: 1799px; /* Define a altura inicial (ajustável) */
+  left: 100%; /* Começa fora da tela pelo lado direito */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: move-horizontal 10s linear infinite; /* Aplica a animação */
+  z-index: 1;
+
+}
+
+.fixed-object {
+  position: fixed;  /* Fixa o objeto na tela */
+  top: 50px;        /* Distância do topo da tela */
+  left: 50px;       /* Distância da esquerda da tela */
+  padding: 10px;
+  background-color: rgba(0, 217, 255, 0.7); /* Cor de fundo */
+  border-radius: 5px;
+  font-size: 20px;
+  animation: mover 3s infinite; /* Aplica animação */
+}
+
+/* Animação que move o elemento horizontalmente */
+@keyframes move-horizontal {
+  0% {
+    left: 100%; /* Começa fora da tela pelo lado direito */
+  }
+  100% {
+    left: -500px; /* Sai da tela pelo lado esquerdo */
+  }
+}
+
+element {
+  transition: 0.5s;
+}
+
+
 
 /* Container de estrelas */
 .stars {
@@ -133,13 +178,15 @@ body {
 
 
 .nav-link a {
-  color:#d6d7d8b2;
+    color:#57a3f0b2;
+  
   text-decoration: none;
  
 }
 
 .nav-link a:hover {
-  color: rgb(150, 19, 19); /* Cor no hover */
+  transition: 0.75s;
+  color: #4e00c2; /* Cor no hover */
 } 
 
 
@@ -147,7 +194,7 @@ body {
 .linkedin {
     margin-top: 20px;
     position: absolute;
-    top: 0;
+    top: -3px;
     right: 0; 
     width: 100px; 
     height: auto;
@@ -160,7 +207,7 @@ body {
 .git{
     margin-top: 20px;
     position: absolute;
-    top: 2px;
+    top: -3px;
     right: 0; 
     gap: 10px;
     margin-left: 10px;
@@ -171,15 +218,15 @@ body {
 
 
 .git svg {
-  width: 20px;
+  width: 22px;
 }
 
 .email svg {
-  width: 20px;
+  width: 23px;
 }
 
 .linkedin svg {
-  width: 20px;
+  width: 22px;
 } 
 
 .navegaçao {  
@@ -188,14 +235,13 @@ body {
     gap:10px;
     font-size: 8pt;
     cursor: pointer;
-     
-    
+       
 }
 
 .email{
     margin-top: 20px;
     position: absolute;
-    top: 0px;
+    top: -2px;
     right: 0px; 
     gap: 10px;
     margin-right: 100px;
@@ -203,7 +249,6 @@ body {
     height: auto;
 
 } 
-
 
 .home-nav {
   display: flex;
@@ -218,76 +263,72 @@ body {
 
 .home-nav h1 a {
     
-    color:#d6d7d8b2;
+    color:#57a3f0b2;
     text-decoration: none;
-     
-             
-} 
-.home-nav h1  :hover{
-  transition: 0.75s;
-  color: rgb(156, 20, 20);
-  
+    transition: 0.75s;
+}  
+
+.home-nav h1 a:hover{
+  color: #4e00c2;
 }
 
 
 .home {
-    margin-inline: 100px;
-    display:flex; 
-    justify-content: center; 
-    text-align: center;
-    align-items: center;
-    height: 100vh; 
-    padding: 0; 
-    background-size: cover;
-    white-space: nowrap;
-    flex-flow: row nowrap;
-    
-    
-    
-  
-    
-    
-}
-
-.home h1  { 
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: 40pt;
-  margin-top: -260px;
-  
-    
+  align-items: center;
+  height: 100vh;
+  margin-inline: 100px;
+  background-size: cover;
+  position: relative;
+  top: -20px;
+  white-space: nowrap;
 
 }
 
 .home h2 {
-  margin: 1rem 0;
-  font-size: 16pt;
+  font-family: Georgia, serif; 
+  font-size: 20pt;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: -200px;
   
-
 }
 
+.highlight {
+  color: #4e00c2; 
+}
 
-.home span {
-  color:#e05e5e;
-
+.home p {
+  font-size: 19px; 
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: -200px;
+  left: -10px;
 }
 
 .buttons a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    color:#d6d7d8b2;
-    font-size: 14pt;
-    background-color: rgb(0, 0, 0);
-    text-decoration: none;
-    border-radius: 50px;
-}
-     
-
-.buttons :hover{
-  transition: 0.75s;
-  color: rgb(156, 20, 20);
+  font-size: 14pt;
+  text-decoration: none;
+  background: #012d5c; 
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  top: -200px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
+.buttons a:hover {
+  background: #0056b3;
+}
 
 .card {
     background: #191c29;
@@ -305,7 +346,7 @@ body {
     cursor: pointer;
     font-family: cursive;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Georgia, serif;
      
 
   }
@@ -386,40 +427,47 @@ body {
 }
 
 .texto-card1 {
-  color: #800000;
+  color:white;
   display: flex;
-  height: 500px;
+  height: 590px;
   transform: translate(500px, 40px);
   margin: 0;
   white-space: nowrap;
-  text-decoration: none;
+
 }
 
 .texto-card1 h2 span {
-  color: #e05e5e;
+  color: #149bb3;
+}
+
+.texto-card1 h2 {
+  font-size: 38pt;
 }
 
 
 .card1 {
-    background: #191c29;
-    width: 240px;
-    height: 320px;
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 20pt;
-    color: rgb(88 199 250 / 0%);
-    cursor: pointer;
-    font-family: cursive;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
+  background: #191c29;
+  width: 240px;
+  height: 320px;
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 20pt;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+  flex-direction: column;
+  font-family: Georgia, serif;
+  left: -250px;
+ ;
+ 
     
-
   }
+
   .card1 span{
     font-size: 0.9pt;
      
@@ -498,16 +546,25 @@ body {
 }
 
 .texto-card2 {
-  color: #800000;
+  color:white; /* Texto claro */
   display: flex;
-  height: 500px;
+  height: 590px;
   transform: translate(500px, 40px);
+  position: relative; 
+  left: -30px;
   margin: 0;
   white-space: nowrap;
+
 }
+  
 
 .texto-card2 h2 span {
-  color: #e05e5e;
+  color: #149bb3;
+  
+}
+
+.texto-card2 h2 {
+  font-size: 38pt;
 }
 
 .card2 {
@@ -526,7 +583,9 @@ body {
   cursor: pointer;
   font-family: cursive;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, serif;
+  left: -190px;
+  white-space: nowrap;  /* nao deixa quebrar linha */
   
 
 }
@@ -590,7 +649,56 @@ body {
   animation: spin 2.5s linear infinite;
 }
 
+.sobre-mim{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  min-height: 100vh;
+  align-items: center;
+  transition: opacity .5s;
 
+}
+
+.texto3 {
+  padding-right: 2rem;
+}
+
+ h2 {
+            font-size: 40pt;
+            font-family: Georgia, serif;
+            margin: 0;
+            color: white;
+        }
+
+        .highlight {
+            color: #149bb3;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px #4e00c2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .text-content {
+                padding-right: 0;
+            }
+        }
 
 /* rodape */
 
@@ -598,8 +706,8 @@ body {
     background-color: #000000; /* Fundo escuro */
     color:#d6d7d8b2; /* Texto claro */
     text-align: center; /* Centraliza o texto */
-    padding: 20px; /* Espaçamento interno */
-    font-family: 'Arial', sans-serif; /* Estilo da fonte */
+    padding: 30px; /* Espaçamento interno */
+    font-family: Georgia, serif; /* Estilo da fonte */
     font-size: 14pt; /* Tamanho do texto */
     border-top: 2px solid #34495e; /* Linha no topo do rodapé */
   }
@@ -612,7 +720,7 @@ body {
   footer a img {
     width: 24px; /* Ajuste o tamanho dos ícones */
     height: 24px;
-    margin: 0 10px; /* Espaçamento entre os ícones */
+    margin: 10px; /* Espaçamento entre os ícones */
     transition: transform 0.3s; /* Efeito de animação */
   }
 
