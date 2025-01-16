@@ -571,7 +571,7 @@ element {
   background: #191c29;
   width: 240px;
   height: 320px;
-  padding: 3px;
+  padding: 20px;
   position: relative;
   border-radius: 6px;
   justify-content: center;
@@ -585,10 +585,16 @@ element {
   flex-direction: column;
   font-family: Georgia, serif;
   left: -190px;
-  white-space: nowrap;  /* nao deixa quebrar linha */
+  word-wrap: break-word;
   
 
 }
+
+.card2 p {
+  width: 100%;  /* garantir que o parágrafo respeite a largura do card */
+  word-wrap: break-word;
+}
+
 .card2 span{
   font-size: 0.9pt;
    
